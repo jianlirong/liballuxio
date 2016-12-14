@@ -21,10 +21,10 @@ find_libjvm()
     jvmpath="$JAVA_HOME/jre/lib/server"
   fi
   if [[ -e $jvmpath ]]; then
-    echo "found libjvm path at $jvmpath, add to LD_LIBRARY_PATH"
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$jvmpath
+    echo "found libjvm path at $jvmpath, add to DYLD_LIBRARY_PATH"
+    export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$jvmpath
   else
-    echo "cannot find JVM path, LD_LIBRARY_PATH not updated"
+    echo "cannot find JVM path, DYLD_LIBRARY_PATH not updated"
   fi
 }
 
